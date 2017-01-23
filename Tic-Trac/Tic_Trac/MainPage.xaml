@@ -4,13 +4,140 @@
              x:Class="Tic_Trac.MainPage"
              Padding="10, 40, 10, 10">
 
-  <Label Text="Hello, XAML!"
-         VerticalOptions="Start"
-         HorizontalTextAlignment="Center"
-         Rotation="-15"
-         IsVisible="true"
-         FontSize="Large"
-         FontAttributes="Bold"
-         TextColor="Aqua" />
+  <StackLayout>
+
+    <Grid
+     HorizontalOptions="Center"
+     VerticalOptions="Start">
+
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+
+      <Button x:Name="btnOffsetOne"
+              Grid.Row="0"
+              Grid.Column="0"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Text="+1"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnOffsetTwo"
+              Grid.Row="0"
+              Grid.Column="1"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Text="+2"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnOffsetThree"
+              Grid.Row="0"
+              Grid.Column="2"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Text="+3"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnOffsetFour"
+              Grid.Row="1"
+              Grid.Column="0"
+              Text="+4"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnOffsetFive"
+              Grid.Row="1"
+              Grid.Column="1"
+              Text="+5"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnOffsetSix"
+              Grid.Row="1"
+              Grid.Column="2"
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Text="+6"
+              Clicked="btnOffset_Clicked"/>
+
+      <Button x:Name="btnHold"
+              Grid.Row="2"
+              Grid.Column="0"
+              Text="Hold"
+              Clicked="btnHold_Clicked"/>
+
+      <Button x:Name="btnAddChar"
+              Grid.Row="2"
+              Grid.Column="1"
+              Text="Add"
+              Clicked="btnAddChar_Clicked"/>
+
+      <Button x:Name="btnClear"
+              Grid.Row="2"
+              Grid.Column="2"
+              Text="Clear"
+              Clicked="btnClear_Clicked"/>
+
+    </Grid>
+
+    <ScrollView>
+
+      <ListView x:Name="lvCharacterList"
+                ItemsSource="{Binding Path=_CharacterList}">
+
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <Label Text="Blah"/>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </ScrollView>
+
+    <!--<StackLayout
+       Orientation="Horizontal"
+       HorizontalOptions="Center">
+
+        <Button x:Name="btnOffsetOne" 
+                Text="+1"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnOffsetTwo" 
+                Text="+2"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnOffsetThree" 
+                Text="+3"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnOffsetFour" 
+                Text="+4"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnOffsetFive" 
+                Text="+5"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnOffsetSix" 
+                Text="+6"
+                Clicked="btnOffset_Clicked"/>
+        
+        <Button x:Name="btnHold" 
+                Text="Hold"
+                Clicked="btnHold_Clicked"/>
+
+      </StackLayout>-->
+
+  </StackLayout>
 
 </ContentPage>
